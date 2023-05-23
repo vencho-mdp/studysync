@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Title> Studysync </Title>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
