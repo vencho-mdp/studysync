@@ -17,4 +17,14 @@ const settings =
     EXECUTE PROCEDURE on_update_timestamp();
   `,
       };
-export default settings;
+export default {
+  connection: {
+    // "postgresql://postgres:e6c*G3C%T?ebmHp@db.hcucsoafouihtxtfpvvp.supabase.co:5432/postgres",
+    database: "postgres",
+    user: "postgres",
+    host: "db.hcucsoafouihtxtfpvvp.supabase.co",
+    port: 5432,
+    password: "e6c*G3C%T?ebmHp",
+  },
+  client: "pg",
+};
