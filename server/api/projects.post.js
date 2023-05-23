@@ -12,7 +12,6 @@ export default defineEventHandler(async (event) => {
       deadline: body.deadline,
     })
     .returning("*");
-
   await db("project_user").insert({
     project_id: projects[0].id,
     user_id: id,

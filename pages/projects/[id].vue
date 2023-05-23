@@ -10,7 +10,8 @@ const computedPercentageOfTasksDone = computed(() => {
   const tasks = projectData.value.tasks;
   const done = tasks.filter((t) => t.status === "done").length;
   const total = tasks.length;
-  return Math.round((done / total) * 100);
+  const result = Math.round((done / total) * 100);
+  return Number.isNaN(result) ? 0 : result;
 });
 let showModal = $ref(false);
 
@@ -66,7 +67,7 @@ const submitTask = async () => {
 
 let userDoesNotExist = $ref(false);
 const users = computed(() =>
-  projectData.value.users.filter((u) => u.id !== user.value.id)
+  projectData.value.users.filter((u) => u?.id !== user.value?.id)
 );
 let userEmail = $ref("");
 const submitUser = async () => {
